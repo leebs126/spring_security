@@ -10,10 +10,12 @@
 		<intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
 		<intercept-url pattern="/**" access="hasAnyRole('ROLE_USER, ADMIN')" />
 
-		<form-login login-page="/login/loginForm.do" default-target-url="/home.do" authentication-failure-url="/login/loginForm.do?error" username-parameter="uid" password-parameter="password" />
+		<form-login login-page="/login/loginForm.do" default-target-url="/home.do"
+		              authentication-failure-url="/login/loginForm.do?error" 
+		              username-parameter="uid" 
+		              password-parameter="password" />
 		<logout logout-url="/logout" logout-success-url="/home.do" />
 		<access-denied-handler error-page="/login/accessDenied.do" />
-		
 		<csrf disabled="false" /> 
 		
 		
